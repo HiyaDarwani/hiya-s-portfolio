@@ -34,3 +34,14 @@ export interface ContactLink {
   href: string;
   type: 'github' | 'linkedin' | 'email' | 'instagram';
 }
+
+export interface LabExperiment {
+  id: string;
+  index: string;
+  title: string;
+  purpose: string;
+  concepts: string[];
+  flow: string[];
+  indicators: string[];
+  sourceProject: string;
+}

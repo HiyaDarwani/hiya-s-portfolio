@@ -1,4 +1,4 @@
-import type { Project, SkillNode, NavItem, ContactLink } from '../types';
+import type { Project, SkillNode, NavItem, ContactLink, LabExperiment } from '../types';
 
 export const navItems: NavItem[] = [
   { index: '01', label: 'ARRIVAL', sectionId: 'arrival' },
@@ -131,4 +131,37 @@ export const contactLinks: ContactLink[] = [
   { label: 'LINKEDIN', href: 'https://linkedin.com/in/hiyadharwani', type: 'linkedin' },
   { label: 'EMAIL', href: 'mailto:hiya@example.com', type: 'email' },
   { label: 'INSTAGRAM', href: 'https://instagram.com/hiyadharwani', type: 'instagram' },
+];
+
+export const labExperiments: LabExperiment[] = [
+  {
+    id: 'audio-dsp',
+    index: '01',
+    title: 'AUDIO DSP / STFT',
+    purpose: 'Exploring spectral signal processing through short-time Fourier transforms, frame-based processing, and filtering.',
+    concepts: ['STFT', 'FRAME BUFFERING', 'SPECTRAL FILTERING', 'WIENER FILTERING', 'ONNX INFERENCE'],
+    flow: ['AUDIO INPUT', 'STFT', 'DSP / ML', 'TELEMETRY'],
+    indicators: ['REAL-TIME DSP', 'LATENCY TELEMETRY', 'SPECTRAL SUBTRACTION'],
+    sourceProject: 'OVERWATCH',
+  },
+  {
+    id: 'local-ai-agent',
+    index: '02',
+    title: 'LOCAL AI AGENT',
+    purpose: 'Autonomous execution loop framing for local AI, Ollama integration, and system-level control.',
+    concepts: ['LOCAL AI AGENT', 'OLLAMA INTEGRATION', 'VOICE INTERACTION', 'SYSTEM CONTROL'],
+    flow: ['OBSERVE', 'UNDERSTAND', 'PLAN', 'ACT', 'VERIFY'],
+    indicators: ['SYSTEM AWARENESS', 'LOCAL AI // VOICE ENABLED', 'EXECUTION LOOP'],
+    sourceProject: 'J.A.R.V.I.S.',
+  },
+  {
+    id: 'vector-retrieval',
+    index: '03',
+    title: 'VECTOR RETRIEVAL',
+    purpose: 'Document intelligence through retrieval-augmented generation and source-grounded answers.',
+    concepts: ['RAG PIPELINE', 'PGVECTOR', 'JINA EMBEDDINGS', 'SOURCE-GROUNDED'],
+    flow: ['INGEST', 'EMBED', 'RETRIEVE', 'CITE'],
+    indicators: ['VECTOR RETRIEVAL', 'STREAMING RESPONSE', 'ISOLATED RETRIEVAL'],
+    sourceProject: 'DOCRAG',
+  },
 ];
