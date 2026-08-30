@@ -89,7 +89,7 @@ const Engineer: React.FC = () => {
           I'm an Electronics & Computer Science engineering student who enjoys
           building things at the intersection of hardware, software and creativity.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.8rem 1.2rem', marginTop: '1.2rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <span className="hud-tag">ARCH: DUAL_DOMAIN</span>
           <span className="hud-tag">TTL: 3V3_LOGIC</span>
           <span className="hud-tag">STATUS: EXPANDING</span>

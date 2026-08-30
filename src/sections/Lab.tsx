@@ -155,7 +155,7 @@ const Lab: React.FC = () => {
           Where software meets solder. The hands-on electronics space — from
           bare-metal firmware to complete IoT systems.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.8rem 1.2rem', marginTop: '1.2rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <span className="hud-tag">WORKBENCH: RIGOL_DS1054Z</span>
           <span className="hud-tag hud-tag--cyan">SIGNAL_GEN: ONLINE</span>
           <span className="hud-tag">LOGIC_PROBE: ACTIVE</span>
@@ -163,7 +163,7 @@ const Lab: React.FC = () => {
       </div>
 
       {/* Interactive Oscilloscope Waveform Controller */}
-      <div ref={synthRef} style={{ marginBottom: '3.5rem' }}>
+      <div ref={synthRef} style={{ marginBottom: '3rem' }}>
         <WaveformVisualizer />
       </div>
 

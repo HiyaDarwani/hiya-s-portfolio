@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
       {/* Section index label & HUD metadata */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div className="label-index">06 / CONTACT</div>
-        <div style={{ display: 'flex', gap: '0.8rem' }}>
+        <div style={{ display: 'flex', gap: '0.8rem 1.2rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <span className="hud-tag">SIGNAL: ONLINE</span>
           <span className="hud-tag">AVAILABILITY: OPEN_FOR_ROLES</span>
         </div>

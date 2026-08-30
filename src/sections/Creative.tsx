@@ -71,7 +71,7 @@ const Creative: React.FC = () => {
             give it soul. This is the other half — where the technical meets the
             expressive.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '0.8rem 1.2rem', marginTop: '1.2rem', flexWrap: 'wrap', alignItems: 'center' }}>
             <span className="hud-tag">MEDIUM: NATURAL_LANGUAGE</span>
             <span className="hud-tag">SYNTAX: ESSAYS & POETRY</span>
             <span className="hud-tag">STATUS: CREATIVE_FLOW</span>
