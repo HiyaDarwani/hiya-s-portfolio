@@ -192,30 +192,30 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', color: '#F97316', letterSpacing: '0.15em' }}>
-            ROAST_ENGINE // v2
+            ROAST_ENGINE // AI
           </span>
           <span className="hud-led" style={{ background: '#F97316', boxShadow: '0 0 6px #F97316' }} />
         </div>
 
-        {/* Score gauge circle */}
+        {/* Score gauge circle replacement */}
         <div style={{
           border: '1px solid rgba(249,115,22,0.3)', borderRadius: '8px',
-          padding: '0.8rem', textAlign: 'center', background: 'rgba(249,115,22,0.04)'
+          padding: '0.8rem 0.5rem', textAlign: 'center', background: 'rgba(249,115,22,0.04)'
         }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--text-muted)', marginBottom: '0.2rem' }}>
-            ATS OVERALL SCORE
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+            ATS EVALUATION
           </div>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 900, color: '#F97316', lineHeight: 1 }}>
-            88<span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/100</span>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 700, color: '#F97316', lineHeight: 1.2, letterSpacing: '0.04em' }}>
+            STRUCTURED FEEDBACK
           </div>
         </div>
 
-        {/* Evaluation Metrics */}
+        {/* Qualitative Evaluation Metrics */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
           {[
-            ['IMPACT VERBS', '92%'],
-            ['ATS FORMATTING', '86%'],
-            ['QUANTIFIED RESULTS', '84%'],
+            ['IMPACT VERBS', 'PARSED'],
+            ['ATS FORMATTING', 'VERIFIED'],
+            ['QUANTIFIED RESULTS', 'ANALYZED'],
           ].map(([label, val]) => (
             <div key={label} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(249,115,22,0.1)', paddingBottom: '0.25rem' }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--text-muted)' }}>{label}</span>
@@ -238,7 +238,7 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
         MULTI_LAYER_PROMPT
       </div>
       <div className="catalyst__ui-fragment" style={{ top: '42%', right: '-4%', borderColor: 'rgba(249,115,22,0.3)' }}>
-        PDF_STREAM // ACTIVE
+        STRUCTURED_JSON
       </div>
     </div>
 
@@ -303,16 +303,16 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
           <span className="hud-led" style={{ background: 'var(--accent-cyan)', boxShadow: '0 0 6px var(--accent-cyan)' }} />
         </div>
 
-        {/* Vector search readout */}
+        {/* Vector search qualitative readout */}
         <div style={{
           border: '1px solid rgba(6,182,212,0.25)', borderRadius: '6px',
-          padding: '0.6rem', background: 'rgba(6,182,212,0.04)'
+          padding: '0.6rem 0.5rem', background: 'rgba(6,182,212,0.04)'
         }}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--accent-cyan)', marginBottom: '0.2rem' }}>
-            COSINE SIMILARITY SCORE
+            VECTOR RETRIEVAL
           </div>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1 }}>
-            0.892 <span style={{ fontSize: '0.7rem', color: 'var(--accent-cyan)' }}>MATCH</span>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            SOURCE-GROUNDED
           </div>
         </div>
 
@@ -322,10 +322,10 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
           padding: '0.5rem', background: 'rgba(5,5,8,0.8)'
         }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.4rem', color: 'var(--accent-cyan)', display: 'block', marginBottom: '0.2rem' }}>
-            SOURCE_CITATION // REF_01
+            SOURCE_CITATION // ACTIVE
           </span>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-            "...retrieval-grounded response isolated to Document_Chunk_48..."
+            "...retrieval-grounded response isolated to document sources..."
           </p>
         </div>
 
@@ -340,10 +340,10 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
         JINA_EMBEDDINGS
       </div>
       <div className="catalyst__ui-fragment" style={{ bottom: '18%', left: '0%', borderColor: 'rgba(6,182,212,0.3)' }}>
-        SSE_STREAM // ACTIVE
+        STREAMING_RESPONSE
       </div>
       <div className="catalyst__ui-fragment" style={{ top: '45%', right: '-4%', borderColor: 'rgba(6,182,212,0.3)' }}>
-        CHUNK_ISOLATED // TRUE
+        ISOLATED_RETRIEVAL
       </div>
     </div>
 
@@ -403,23 +403,23 @@ const OverWatchStage: React.FC<{ project: typeof projects[0] }> = ({ project }) 
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', color: '#38BDF8', letterSpacing: '0.15em' }}>
-            DSP_DSP // STFT_TELEMETRY
+            DSP_DSP // TELEMETRY
           </span>
           <span className="hud-led" style={{ background: '#38BDF8', boxShadow: '0 0 6px #38BDF8' }} />
         </div>
 
-        {/* Latency badge */}
+        {/* Qualitative Latency / DSP badge */}
         <div style={{
           border: '1px solid rgba(56,189,248,0.3)', borderRadius: '6px',
           padding: '0.5rem 0.8rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           background: 'rgba(56,189,248,0.04)'
         }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--text-muted)' }}>DSP LATENCY</div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.2rem', color: '#38BDF8', fontWeight: 700 }}>4.2ms</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--text-muted)' }}>LATENCY TELEMETRY</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem', color: '#38BDF8', fontWeight: 700 }}>REAL-TIME DSP</div>
           </div>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.4rem', color: 'var(--accent-purple)', border: '1px solid rgba(192,132,252,0.3)', padding: '0.2rem 0.4rem', borderRadius: '2px' }}>
-            CUDA/MPS
+            STFT/ONNX
           </span>
         </div>
 
@@ -442,13 +442,13 @@ const OverWatchStage: React.FC<{ project: typeof projects[0] }> = ({ project }) 
 
       {/* Floating HUD fragments */}
       <div className="catalyst__ui-fragment" style={{ top: '10%', right: '0%', borderColor: 'rgba(56,189,248,0.3)' }}>
-        ONNX_RUNTIME // INFER
+        ONNX_RUNTIME
       </div>
       <div className="catalyst__ui-fragment" style={{ bottom: '15%', left: '0%', borderColor: 'rgba(56,189,248,0.3)' }}>
-        CIRCULAR_BUFFER // 512
+        FRAME_BUFFERING
       </div>
       <div className="catalyst__ui-fragment" style={{ top: '44%', right: '-4%', borderColor: 'rgba(56,189,248,0.3)' }}>
-        WIENER_FILTER // ACTIVE
+        WIENER_FILTERING
       </div>
     </div>
 
@@ -526,19 +526,19 @@ const JarvisStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
                 0{i + 1} / {step}
               </span>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: i === 2 ? 'var(--accent-purple)' : 'var(--text-muted)' }}>
-                {i === 2 ? 'EXECUTING' : 'READY'}
+                {i === 2 ? 'STAGE_NODE' : 'READY'}
               </span>
             </div>
           ))}
         </div>
 
-        {/* System Monitor Readout */}
+        {/* Qualitative System Monitor Readout */}
         <div style={{
           border: '1px solid rgba(192,132,252,0.2)', borderRadius: '4px',
           padding: '0.4rem 0.6rem', background: 'rgba(5,5,8,0.8)'
         }}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>SYSTEM AWARENESS</div>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--accent-purple)' }}>CPU: 12% | RAM: 4.1GB | ACTIVE: VSCODE</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--accent-purple)' }}>LOCAL AI // VOICE ENABLED</div>
         </div>
 
         {/* Pipeline readout */}
@@ -549,13 +549,13 @@ const JarvisStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
 
       {/* Floating HUD fragments */}
       <div className="catalyst__ui-fragment" style={{ top: '10%', right: '0%', borderColor: 'rgba(192,132,252,0.3)' }}>
-        OLLAMA // LLAMA3
+        LOCAL_AI_AGENT
       </div>
       <div className="catalyst__ui-fragment" style={{ bottom: '15%', left: '0%', borderColor: 'rgba(192,132,252,0.3)' }}>
-        SYSTEM_STATE // MONITORED
+        OLLAMA_INTEGRATION
       </div>
       <div className="catalyst__ui-fragment" style={{ top: '44%', right: '-4%', borderColor: 'rgba(192,132,252,0.3)' }}>
-        ACTION_LOOP // VERIFIED
+        SYSTEM_CONTROL
       </div>
     </div>
 
