@@ -27,7 +27,7 @@ const CatalystScreen: React.FC = () => (
       padding: '0.5rem', background: 'rgba(124,58,237,0.05)'
     }}>
       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--accent-purple)', marginBottom: '0.3rem', display: 'flex', justifyContent: 'space-between' }}>
-        <span>TEAM MATCH — 94%</span>
+        <span>SYNERGY MATCH</span>
         <span style={{ color: 'var(--accent-blue)' }}>VERIFIED</span>
       </div>
       <div style={{ display: 'flex', gap: '0.3rem' }}>
@@ -40,12 +40,16 @@ const CatalystScreen: React.FC = () => (
         ))}
       </div>
     </div>
-    {/* Skill bars */}
-    {[['Python', 0.85], ['Flutter', 0.72], ['Hardware', 0.9]].map(([skill, pct]) => (
+    {/* Skill evaluation bars */}
+    {[
+      ['SKILL COMPLEMENT', 0.85],
+      ['TIME COMPATIBILITY', 0.72],
+      ['COMMITMENT ALIGN', 0.90],
+    ].map(([skill, pct]) => (
       <div key={String(skill)}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.15rem' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--text-muted)' }}>{skill}</span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--accent-violet)' }}>{Math.round(Number(pct)*100)}%</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.36rem', color: 'var(--text-muted)' }}>{skill}</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.36rem', color: 'var(--accent-violet)' }}>ALIGNED</span>
         </div>
         <div style={{ height: '2px', background: 'rgba(124,58,237,0.15)', borderRadius: '2px' }}>
           <div style={{ height: '100%', width: `${Number(pct)*100}%`, background: 'var(--accent-violet)', borderRadius: '2px' }} />
@@ -140,29 +144,29 @@ const CatalystComposition: React.FC = () => {
         className="catalyst__ui-fragment"
         style={{ bottom: '22%', left: '2%' }}
       >
-        SKILL GAP: NONE
+        SYNERGY MATCH // FORMULA
       </div>
       <div
         ref={frag3Ref}
         className="catalyst__ui-fragment"
         style={{ top: '40%', right: '0%' }}
       >
-        TEAM BALANCE: OPTIMAL
+        ROLE MATRIX // BALANCED
       </div>
       <div
         ref={frag4Ref}
         className="catalyst__ui-fragment"
         style={{ bottom: '10%', left: '15%' }}
       >
-        RECO_MODEL: COSINE_v2
+        GEMINI_RECOMMENDER
       </div>
 
       {/* Technical annotations */}
       <div className="catalyst__annotation" style={{ top: '8%', left: '10%' }}>
-        v1.0.0 — MOBILE
+        MOBILE // FLUTTER
       </div>
       <div className="catalyst__annotation" style={{ bottom: '12%', right: '8%' }}>
-        FIREBASE / FLUTTER
+        FIREBASE / DART FROG
       </div>
     </div>
   );
@@ -214,8 +218,8 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
           {[
             ['IMPACT VERBS', 'PARSED'],
-            ['ATS FORMATTING', 'VERIFIED'],
-            ['QUANTIFIED RESULTS', 'ANALYZED'],
+            ['ATS FORMATTING', 'AUDITED'],
+            ['STRUCTURED FEEDBACK', 'GENERATED'],
           ].map(([label, val]) => (
             <div key={label} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(249,115,22,0.1)', paddingBottom: '0.25rem' }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', color: 'var(--text-muted)' }}>{label}</span>
@@ -226,7 +230,7 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
 
         {/* Process pipeline readout */}
         <div style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '0.4rem', color: 'var(--text-muted)', textAlign: 'center', letterSpacing: '0.1em' }}>
-          UPLOAD → ANALYZE → SCORE → FEEDBACK
+          UPLOAD → ANALYZE → STRUCTURE → FEEDBACK
         </div>
       </div>
 
@@ -245,7 +249,7 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
     {/* Right: Info */}
     <div className="catalyst__info">
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <span className="catalyst__tag" style={{ color: '#F97316' }}>AI RESUME ANALYSIS — 2024</span>
+        <span className="catalyst__tag" style={{ color: '#F97316' }}>FULL-STACK AI APP — 2024</span>
         <span className="hud-tag">STATUS: COMPLETE</span>
       </div>
       <h3 className="catalyst__title">{project.title}</h3>
@@ -258,7 +262,7 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
       </div>
       <div className="catalyst__meta">
         <div className="catalyst__meta-item">
-          <strong>TYPE</strong>Full-Stack Web App
+          <strong>TYPE</strong>Full-Stack AI App
         </div>
         <div className="catalyst__meta-item">
           <strong>YEAR</strong>2024
@@ -266,9 +270,20 @@ const ResumeRoasterStage: React.FC<{ project: typeof projects[0] }> = ({ project
         <div className="catalyst__meta-item">
           <strong>STATUS</strong>Complete
         </div>
-        <div className="catalyst__meta-item">
-          <strong>COMMIT_ID</strong>#r8a402e
-        </div>
+        {project.githubUrl && (
+          <div className="catalyst__meta-item">
+            <strong>SOURCE</strong>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="catalyst__repo-link"
+              data-cursor="GITHUB"
+            >
+              REPOSITORY ↗
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -330,8 +345,8 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
         </div>
 
         {/* Pipeline flow */}
-        <div style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '0.4rem', color: 'var(--text-muted)', textAlign: 'center', letterSpacing: '0.1em' }}>
-          DOCUMENT ↓ RETRIEVE ↓ GENERATE ↓ CITE
+        <div style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '0.38rem', color: 'var(--text-muted)', textAlign: 'center', letterSpacing: '0.08em' }}>
+          INGESTION → EMBEDDING → RETRIEVAL → CITATION
         </div>
       </div>
 
@@ -350,11 +365,11 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
     {/* Right: Info */}
     <div className="catalyst__info">
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <span className="catalyst__tag" style={{ color: 'var(--accent-cyan)' }}>RETRIEVAL-AUGMENTED GENERATION — 2024</span>
+        <span className="catalyst__tag" style={{ color: 'var(--accent-cyan)' }}>DOCUMENT AI PIPELINE — 2024</span>
         <span className="hud-tag">STATUS: COMPLETE</span>
       </div>
       <h3 className="catalyst__title">{project.title}</h3>
-      <p className="catalyst__subtitle">Document-isolated retrieval with streamed, source-grounded responses.</p>
+      <p className="catalyst__subtitle">{project.subtitle}</p>
       <p className="catalyst__desc">{project.description}</p>
       <div className="catalyst__tech-list">
         {project.technologies.map(t => (
@@ -363,7 +378,7 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
       </div>
       <div className="catalyst__meta">
         <div className="catalyst__meta-item">
-          <strong>TYPE</strong>Web Application
+          <strong>TYPE</strong>Document AI Pipeline
         </div>
         <div className="catalyst__meta-item">
           <strong>YEAR</strong>2024
@@ -371,9 +386,20 @@ const DocRAGStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
         <div className="catalyst__meta-item">
           <strong>STATUS</strong>Complete
         </div>
-        <div className="catalyst__meta-item">
-          <strong>COMMIT_ID</strong>#d9c02a7
-        </div>
+        {project.githubUrl && (
+          <div className="catalyst__meta-item">
+            <strong>SOURCE</strong>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="catalyst__repo-link"
+              data-cursor="GITHUB"
+            >
+              REPOSITORY ↗
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -455,11 +481,11 @@ const OverWatchStage: React.FC<{ project: typeof projects[0] }> = ({ project }) 
     {/* Right: Info */}
     <div className="catalyst__info">
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <span className="catalyst__tag" style={{ color: '#38BDF8' }}>AUDIO TELEMETRY & DSP — 2024</span>
+        <span className="catalyst__tag" style={{ color: '#38BDF8' }}>AUDIO DSP & TELEMETRY — 2024</span>
         <span className="hud-tag">STATUS: COMPLETE</span>
       </div>
       <h3 className="catalyst__title">{project.title}</h3>
-      <p className="catalyst__subtitle">Real-time audio processing with DSP, ML inference and telemetry.</p>
+      <p className="catalyst__subtitle">{project.subtitle}</p>
       <p className="catalyst__desc">{project.description}</p>
       <div className="catalyst__tech-list">
         {project.technologies.map(t => (
@@ -468,7 +494,7 @@ const OverWatchStage: React.FC<{ project: typeof projects[0] }> = ({ project }) 
       </div>
       <div className="catalyst__meta">
         <div className="catalyst__meta-item">
-          <strong>TYPE</strong>Systems & Audio DSP
+          <strong>TYPE</strong>Audio DSP & ML System
         </div>
         <div className="catalyst__meta-item">
           <strong>YEAR</strong>2024
@@ -476,9 +502,20 @@ const OverWatchStage: React.FC<{ project: typeof projects[0] }> = ({ project }) 
         <div className="catalyst__meta-item">
           <strong>STATUS</strong>Complete
         </div>
-        <div className="catalyst__meta-item">
-          <strong>COMMIT_ID</strong>#o7w419b
-        </div>
+        {project.githubUrl && (
+          <div className="catalyst__meta-item">
+            <strong>SOURCE</strong>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="catalyst__repo-link"
+              data-cursor="GITHUB"
+            >
+              REPOSITORY ↗
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -575,16 +612,13 @@ const JarvisStage: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
       </div>
       <div className="catalyst__meta">
         <div className="catalyst__meta-item">
-          <strong>TYPE</strong>System Agent / Python
+          <strong>TYPE</strong>Autonomous System Agent
         </div>
         <div className="catalyst__meta-item">
           <strong>YEAR</strong>2024
         </div>
         <div className="catalyst__meta-item">
           <strong>STATUS</strong>In Progress (WIP)
-        </div>
-        <div className="catalyst__meta-item">
-          <strong>COMMIT_ID</strong>#j4a701v
         </div>
       </div>
     </div>
@@ -695,28 +729,20 @@ const Projects: React.FC = () => {
             {/* Right: project information */}
             <div className="catalyst__info">
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <span className="catalyst__tag">FEATURED PROJECT — 2024</span>
+                <span className="catalyst__tag">SMART HACKATHON PLATFORM — 2024</span>
                 <span className="hud-tag">STATUS: COMPLETE</span>
               </div>
               <h3 className="catalyst__title">CATALYST</h3>
-              <p className="catalyst__subtitle">
-                Skill-Verified Team Matching for Hackathons
-              </p>
-              <p className="catalyst__desc">
-                A mobile application designed to form balanced hackathon teams using
-                verified skills and commitment-based compatibility. Catalyst
-                intelligently matches participants by analysing skill gaps, role
-                distribution, and project preferences — removing the chaos from team
-                formation.
-              </p>
+              <p className="catalyst__subtitle">{project.subtitle}</p>
+              <p className="catalyst__desc">{project.description}</p>
               <div className="catalyst__tech-list">
-                {['Flutter', 'Firebase', 'Dart Frog', 'Gemini'].map(t => (
+                {project.technologies.map(t => (
                   <span key={t} className="catalyst__tech-item">{t}</span>
                 ))}
               </div>
               <div className="catalyst__meta">
                 <div className="catalyst__meta-item">
-                  <strong>TYPE</strong>Mobile App
+                  <strong>TYPE</strong>Mobile Application
                 </div>
                 <div className="catalyst__meta-item">
                   <strong>YEAR</strong>2024
@@ -724,9 +750,20 @@ const Projects: React.FC = () => {
                 <div className="catalyst__meta-item">
                   <strong>STATUS</strong>Complete
                 </div>
-                <div className="catalyst__meta-item">
-                  <strong>COMMIT_ID</strong>#e8f4a21
-                </div>
+                {project.githubUrl && (
+                  <div className="catalyst__meta-item">
+                    <strong>SOURCE</strong>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="catalyst__repo-link"
+                      data-cursor="GITHUB"
+                    >
+                      REPOSITORY ↗
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>

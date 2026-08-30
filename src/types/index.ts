@@ -7,6 +7,7 @@ export interface Project {
   status: 'complete' | 'wip' | 'concept';
   year: string;
   featured?: boolean;
+  githubUrl?: string;
 }
 
 export interface SkillNode {

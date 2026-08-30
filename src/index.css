@@ -874,6 +874,28 @@ img { display: block; max-width: 100%; }
 }
 .catalyst__meta-item { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; color: var(--text-muted); }
 .catalyst__meta-item strong { display: block; color: var(--text-secondary); margin-bottom: 0.2rem; }
+.catalyst__repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  background: rgba(168, 85, 247, 0.06);
+  text-decoration: none;
+  transition: all 0.2s var(--ease-out-expo);
+  cursor: none;
+}
+.catalyst__repo-link:hover {
+  border-color: var(--accent-violet);
+  color: var(--text-primary);
+  background: rgba(124, 58, 237, 0.18);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.25);
+}
 
 .project-placeholder {
   padding: 2.2rem 2.5rem;
